@@ -9,7 +9,13 @@ class ContaBancária {
 
     //Métodos
     depositar(valor){
-        this.#saldo += valor;
+        if(Number.isFinite(valor) && (valor > 0)) {
+            this.#saldo += valor;
+
+            return true;
+        }
+
+        return false;
     }
 
     sacar(valor){
@@ -46,7 +52,7 @@ class CaixaEletronico {
         // Fazer o saque na conta
         if(this.conta.temSaldoParaSacar(valorSaque)){
             this.conta.sacar(valorSaque);
-            this.conta.mostrarSaldo(this.conta.saldo);
+            this.mostrarSaldo(this.conta.saldo);
         }
         else{
             // Motrar saldo insuficiente
