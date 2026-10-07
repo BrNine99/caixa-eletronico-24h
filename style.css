@@ -1,0 +1,126 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #ffffff;
+}
+
+/* Título */
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Saldo */
+#saldo {
+    width: 350px;
+    padding: 20px;
+
+    text-align: center;
+    font-size: 24px;
+
+    background-color: #ffffff;
+    color: #0f172a;
+
+    border-radius: 10px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+    margin-bottom: 20px;
+}
+
+/* Campos */
+input {
+    width: 350px;
+    padding: 14px;
+
+    border: 2px solid transparent;
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+}
+
+input::placeholder {
+    color: #64748b;
+}
+
+/* Botões */
+button {
+    width: 350px;
+    padding: 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+/* Botão Depositar */
+button:nth-of-type(1) {
+    background-color: #16a34a;
+}
+
+button:nth-of-type(1):hover {
+    background-color: #15803d;
+    transform: translateY(-2px);
+}
+
+/* Botão Sacar */
+button:nth-of-type(2) {
+    background-color: #dc2626;
+}
+
+button:nth-of-type(2):hover {
+    background-color: #b91c1c;
+    transform: translateY(-2px);
+}
+
+/* Efeito ao clicar */
+button:active {
+    transform: scale(0.98);
+}
+
+/* Responsividade */
+@media (max-width: 450px) {
+
+    h1 {
+        font-size: 25px;
+    }
+
+    #saldo,
+    input,
+    button {
+        width: 90%;
+    }
+}
