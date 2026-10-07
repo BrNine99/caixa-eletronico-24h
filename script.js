@@ -40,6 +40,21 @@ class CaixaEletronico {
 
     }
 
+    sacar() {
+        // Pega o valor do saque
+        const valorSaque = parseFloat(document.getElementById("valorSaque").value);
+        // Fazer o saque na conta
+        if(this.conta.temSaldoParaSacar(valorSaque)){
+            this.conta.sacar(valorSaque);
+            this.conta.mostrarSaldo(this.conta.saldo);
+        }
+        else{
+            // Motrar saldo insuficiente
+            this.mostrarSaldo("Insuficiente!");
+        }
+        
+    }
+
     mostrarSaldo(saldo) {
         document.getElementById("saldo").textContent = `Saldo: R$ ${saldo}`;
         document.getElementById("valorDeposito").value = "";
